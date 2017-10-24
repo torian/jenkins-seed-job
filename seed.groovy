@@ -1,6 +1,6 @@
 String repo = 'jenkins-seed-job'
 
-job('seed-1') {
+job('seed-jobs') {
   triggers {
     scm('* * * * *')
   }
@@ -17,7 +17,7 @@ job('seed-1') {
 
   steps {
     dsl {
-      external('jobs/**/*DSL.groovy')
+      external('jobs/**/JenkinsDSL.groovy')
     }
   }
 }
