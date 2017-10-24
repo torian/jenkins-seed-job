@@ -17,7 +17,7 @@ branches.each { branch ->
           //credentials()
           //refspec('+refs/pull/*:refs/remotes/origin/pr/*')
         }
-        branch('*/$branch')
+        branch(branch)
       }
     }
 
