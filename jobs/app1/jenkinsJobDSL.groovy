@@ -3,7 +3,7 @@ def repository = 'ansible-role-filebeat'
 
 def branches = [ 'master', 'development' ]
 
-branches.each { branch ->
+branches.each { b ->
 
   job("${repository}-${branch}") {
     triggers {
@@ -17,7 +17,7 @@ branches.each { branch ->
           //credentials()
           //refspec('+refs/pull/*:refs/remotes/origin/pr/*')
         }
-        branch("$branch")
+        branch(b)
       }
     }
 
