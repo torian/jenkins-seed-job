@@ -5,7 +5,7 @@ def branches = [ 'master', 'development' ]
 
 branches.each { b ->
 
-  job("${repository}-${branch}") {
+  job("${repository}-${b}") {
     triggers {
       scm('* * * * *')
     }
