@@ -5,7 +5,7 @@ def branches = [ 'master', 'development' ]
 
 branches.each { branch ->
 
-  job('$repository-$branch') {
+  job("$repository-$branch") {
     triggers {
       scm('* * * * *')
     }
@@ -17,7 +17,7 @@ branches.each { branch ->
           //credentials()
           //refspec('+refs/pull/*:refs/remotes/origin/pr/*')
         }
-        branch(branch)
+        branch("$branch")
       }
     }
 
