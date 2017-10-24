@@ -1,11 +1,11 @@
 
-String repository = 'app1'
+def repository = 'ansible-role-filebeat'
 
 def branches = [ 'master', 'development' ]
 
 branches.each { branch ->
 
-  job("$repository-$branch") {
+  job("${repository}-${branch}") {
     triggers {
       scm('* * * * *')
     }
@@ -13,7 +13,7 @@ branches.each { branch ->
     scm {
       git {
         remote {
-          github("torian/$repo", 'https')
+          github("torian/$repository", 'https')
           //credentials()
           //refspec('+refs/pull/*:refs/remotes/origin/pr/*')
         }
