@@ -11,14 +11,7 @@ branches.each { b ->
     }
 
     scm {
-      git {
-        remote {
-          git("file:///vagrant/git/$repository")
-          //credentials()
-          //refspec('+refs/pull/*:refs/remotes/origin/pr/*')
-        }
-        branch(b)
-      }
+      git("file:///vagrant/git/$repository")
     }
 
     steps {
